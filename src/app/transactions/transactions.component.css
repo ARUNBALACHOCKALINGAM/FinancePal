@@ -1,0 +1,17 @@
+.container h2{
+    margin-top:10%;
+    font-size: 1.8rem;
+}
+
+.input-container{
+    display:flex;
+    justify-content: left;
+}
+
+.amountForm{
+    margin-left: 20px;
+}
+
+button{
+    margin-left: 20px;
+}

@@ -1,18 +1,32 @@
 .logo {
-    display: flex;
-    background-color: rgba(0, 0, 255, 0.252); /* Blue background with reduced opacity */
-    border-radius: 10px; /* Rounded edges */
-    text-align: center;
-    padding: 10px; /* Add some padding for spacing */
-  }
+  display: flex;
+  background-color: rgba(
+    0,
+    0,
+    255,
+    0.252
+  ); /* Blue background with reduced opacity */
+  border-radius: 10px; /* Rounded edges */
+  text-align: center;
+  padding: 10px; /* Add some padding for spacing */
+}
 
-  .logo img,
-  .logo p {
-    margin: 0; /* Remove default margins */
-  }
+.logo img,
+.logo p {
+  margin: 0; /* Remove default margins */
+}
 
-  .financepal{
-    font-size: 1.2rem;
-    font-weight: 800;
-  }
+.financepal {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
 
+li:hover {
+  background-color: rgba(0, 0, 255, 0.252);
+}
+
+
+.sidebar{
+  position:absolute;
+  left:0;
+}

@@ -8,6 +8,7 @@ import { AmountFormComponent } from './amount-form/amount-form.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NgChartsModule } from 'ng2-charts';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
+import { TransactionsComponent } from './transactions/transactions.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
     NavbarComponent,
     AmountFormComponent,
     SidebarComponent,
-    PieChartComponent
+    PieChartComponent,
+    TransactionsComponent
   ],
   imports: [
     BrowserModule,
