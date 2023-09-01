@@ -1,32 +1,52 @@
-
-  <div class="jumbotron jumbotron-fluid col-11" style="background-color: #daf0f7 ; margin: 1%; padding: 5%;">
-    <div class="container">
-      <h1 class="display-4">    Income:</h1>
-      <hr class="my-4">
-      <form #IncomeForm="ngForm" (ngSubmit)="AddIncome(IncomeForm)">
-        <div class="col-4">
+<div class="container">
+  <h1 class="display-6" style="margin-top: 5%;" >Income:</h1>
+  <hr class="my-4">
+  <form #IncomeForm="ngForm" (ngSubmit)="AddIncome(IncomeForm)">
+    <div class="row">
+      <div class="col-md-4">
         <div class="form-group">
-          <label style="margin-top: 1%;" for="salary">Salary</label>
-          <input style="margin-top: 1%;" ngModel #salary="ngModel" name ="salary" required  type="string" class="form-control" id="salary" aria-describedby="salary" placeholder="Enter Salary Amount">
-          <div class ="text-danger mt-1" *ngIf="(salary.errors?.['required'] && salary.dirty) || (salary.errors?.['required'] && salary.touched)">
-            salary is required! - enter 0 if not available
-                </div>
+          <label for="salary">Salary</label>
+          <input
+            [(ngModel)]="salary"
+            name="salary" required
+            type="number"
+            class="form-control"
+            id="salary"
+            placeholder="Enter Salary Amount"
+          >
+          <div class="text-danger mt-1" *ngIf="(salary === null || salary === undefined || salary === 0) && IncomeForm.submitted">
+            Salary is required! Enter 0 if not available.
+          </div>
         </div>
       </div>
-      <div class="col-4">
+      <div class="col-md-4">
         <div class="form-group">
-          <label for="dividend" style="margin-top: 1%;">Other Income</label>
-          <input type="string" ngModel #otherincome="ngModel" name ="otherincome" required  class="form-control" id="dividend" placeholder="Enter Other Income Amount" style="margin-top: 1%;">
-          <div class ="text-danger mt-1" *ngIf="(otherincome.errors?.['required'] && otherincome.dirty) || (otherincome.errors?.['required'] && otherincome.touched)">
-            otherincome is required! - enter 0 if not available
-                </div>
+          <label for="otherincome">Other Income</label>
+          <input
+            [(ngModel)]="otherincome"
+            name="otherincome" required
+            type="number"
+            class="form-control"
+            id="otherincome"
+            placeholder="Enter Other Income Amount"
+          >
+          <div class="text-danger mt-1" *ngIf="(otherincome === null || otherincome === undefined || otherincome === 0) && IncomeForm.submitted">
+            Other income is required! Enter 0 if not available.
+          </div>
         </div>
       </div>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+  </form>
 
-    
-        <button type="submit" class="btn text-white" style="margin-top: 1%; background-color: blue;">Submit</button>
-      </form>
+
+  <!-- Progress Bar -->
+  <div class="progress col-9 " style="margin-top: 10%;">
+    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" [style.width.%]="calculateProgress()" aria-label="Salary" [attr.aria-valuenow]="calculateProgress()" aria-valuemin="0" aria-valuemax="100">
+     Salary
+    </div>
+    <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" [style.width.%]="calculateOtherIncomeProgress()" aria-label="Other Income" [attr.aria-valuenow]="calculateOtherIncomeProgress()" aria-valuemin="0" aria-valuemax="100">
+     Other Income
     </div>
   </div>
-
   

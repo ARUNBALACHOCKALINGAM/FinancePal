@@ -19,4 +19,24 @@ export class AmountFormComponent {
     }
 
   }
+
+
+  
+  salary: number = 0;
+  otherincome: number = 0;
+
+  calculateProgress(): number {
+    if (this.salary === 0 && this.otherincome === 0) {
+      return 0; // To avoid division by zero
+    }
+    return (this.salary / (this.salary + this.otherincome)) * 100;
+  }
+
+  calculateOtherIncomeProgress(): number {
+    if (this.salary === 0 && this.otherincome === 0) {
+      return 0; // To avoid division by zero
+    }
+    return (this.otherincome / (this.salary + this.otherincome)) * 100;
+  }
+
 }
